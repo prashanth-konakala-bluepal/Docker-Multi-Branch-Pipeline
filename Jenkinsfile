@@ -1,27 +1,36 @@
-pipeline {
-		  agent any
-		  stages 
-				{
-				 stage('Build') 
+pipeline{
+			agent any
+			
+			environment
+				 {
+				  PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+				 }
+			 
+				 {
+				  PATH = "/opt/jdk-11.0.10/bin:$PATH"
+				 }
+			stages 
+					{
+						stage ('Maven Build') 
+							{
+								steps
 								{
-									steps 
-										{
-										 echo 'Hi, this prashanth. Starting the build process'
-										}
+										sh 'mvn clean compile'
 								}
-				 stage('Compile')
+							}
+						stage ('Testing Stage')
+							{
+								steps
 								{
-									steps
-										{
-										 echo 'Compiled Successfully'
-										}
+									sh 'mvn test'
 								}
-				 stage('Deploy to Dev')
+							}
+						stage ('Deploying to Dev')
+							{
+								steps
 								{
-								 steps
-										{
-										 echo 'Deploying to Dev'
-										}
-								}		
-				}
-		 }
+										sh 'mvn deploy'
+								}
+							}
+					}
+		}
