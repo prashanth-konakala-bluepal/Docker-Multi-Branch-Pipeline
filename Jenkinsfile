@@ -5,10 +5,6 @@ pipeline{
 			 {
 			  PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
 			 }
-		 
-			 {
-			  PATH = "/opt/jdk-11.0.10/bin:$PATH"
-			 }
 		 stages
 				{
 					stage("Git Checkout")
