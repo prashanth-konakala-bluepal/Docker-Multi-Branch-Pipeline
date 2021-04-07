@@ -1,5 +1,5 @@
 pipeline{	
-		 agent none
+		 node('master')
 	
 		 stages
 				{
