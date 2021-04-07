@@ -1,6 +1,4 @@
-pipeline{		 
-		 agent any
-	
+pipeline{		 	
 		 stages
 				{
 					stage("Git Checkout")
