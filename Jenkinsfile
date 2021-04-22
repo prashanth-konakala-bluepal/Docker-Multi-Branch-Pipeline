@@ -15,7 +15,7 @@ pipeline{
 						 steps
 								{
 								 sh "mvn clean package"
-								 sh "mv /var/lib/jenkins/workspace/Docker-Multi-Branch-Pipeline_main/webapp/target/*.war /var/lib/jenkins/workspace/Docker-Multi-Branch-Pipeline_main/webapp/target/main.war"
+		
 								}
 						}		
 					
