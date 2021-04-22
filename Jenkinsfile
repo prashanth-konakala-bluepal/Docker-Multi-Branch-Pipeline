@@ -4,8 +4,10 @@ pipeline{
 		 stages
 				{
 					stage("welcome")
-					{
-						echo ("welcom")
-					}
+						steps {
+							{
+								echo ("welcome")
+							}
+						      }	
 				}	
 		}
