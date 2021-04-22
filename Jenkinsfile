@@ -18,5 +18,18 @@ pipeline{
 								 sh "mv /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/*.war /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/master.war"
 								}
 						}
+					stage("Deploying to Dev")
+						{
+						 	steps
+								{
+								 sshagent(['Docker'])
+										{
+										 sh """
+										 	docker exec -it master /bin/bash
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/master.war ubuntu@3.138.124.225:/opt/tomcat/webapps/
+										    """
+										}
+								}
+						}
 				}	
 		}
