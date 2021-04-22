@@ -26,6 +26,7 @@ pipeline{
 										{
 										 sh """
 										 	scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/master.war ubuntu@3.138.124.225:/opt/warfiles/master/
+											ssh ubuntu@3.138.124.225 mv /opt/warfiles/master/master.war 0648501e6a1a:/opt/tomcat/webapps/
 										    """
 										}
 								}
