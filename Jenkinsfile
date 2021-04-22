@@ -7,7 +7,7 @@ pipeline{
 					{
 						 steps
 								{
-								 git branch: 'main', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
+								 git branch: 'main', url: 'https://github.com/prashanth-konakala-bluepal/Docker-Multi-Branch-Pipeline.git'
 								}
 					}
 				}	
