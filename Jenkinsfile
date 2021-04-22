@@ -25,8 +25,7 @@ pipeline{
 								 sshagent(['Docker'])
 										{
 										 sh """
-										 	docker exec -it master /bin/bash
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/master.war ubuntu@3.138.124.225:/opt/tomcat/webapps/
+										 	scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Docker-Multi-Containers_main/webapp/target/master.war ubuntu@3.138.124.225:"0648501e6a1a:/opt/tomcat/webapps/"
 										    """
 										}
 								}
