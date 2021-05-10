@@ -2,7 +2,7 @@ pipeline{
 		 agent { label 'master' }
 	
 		 stages
-				{
+			{
 					stage("Git Checkout")
 						{
 							 steps
